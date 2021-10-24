@@ -3,6 +3,7 @@
 logs/
 venv/
 **/logs
+*/venv
 **/venv
 
 # Byte-compiled / optimized / DLL files
