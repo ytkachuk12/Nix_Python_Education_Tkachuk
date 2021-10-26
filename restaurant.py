@@ -7,6 +7,7 @@ import re
 
 class Customer:
     """Class customer contain customer information"""
+
     customer_new_id = itertools.count()
 
     def __init__(self, customer_name: str, customer_phone: str, customer_email: str, customer_address: str):
