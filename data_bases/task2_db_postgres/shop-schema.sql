@@ -45,6 +45,13 @@ CREATE TABLE if not exists Orders
 );
 
 
+CREATE TABLE Categories
+(
+    category_id INTEGER PRIMARY KEY NOT NULL,
+	category_title VARCHAR(255),
+	category_description TEXT
+);
+
 
 CREATE TABLE Products
 (
@@ -54,26 +61,15 @@ CREATE TABLE Products
 	in_stock INT,
 	price FLOAT,
 	slug VARCHAR(45),
-	category_id INT,
-	FOREIGN KEY (category_id) REFERENCES Categories(category_id)
+	Categories_category_id INT,
+	FOREIGN KEY (Categories_category_id) REFERENCES Categories(category_id)
 );
-
 
 
 CREATE TABLE if NOT EXISTS Cart_product
 (
-    carts_cart_id INT,
-    products_product_id INT,
-    FOREIGN KEY (Carts_cart_id) REFERENCES Carts(cart_id),
-    FOREIGN KEY (Products) REFERENCES Products(product_id)
+    cart_id INT,
+    Products_product_id INT,
+    FOREIGN KEY (cart_id) REFERENCES Carts(cart_id),
+    FOREIGN KEY (Products_product_id) REFERENCES Products(product_id)
 );
-
-
-
-CREATE TABLE Categories
-(
-    category_id INTEGER PRIMARY KEY NOT NULL,
-	category_title VARCHAR(255),
-	category_description TEXT
-);
-
