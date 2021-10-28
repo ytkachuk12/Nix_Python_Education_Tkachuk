@@ -10,4 +10,4 @@ COPY Categories FROM '/usr/src/categories.csv' DELIMITER ',' CSV;
 
 COPY Products FROM '/usr/src/products.csv' DELIMITER ',' CSV;
 
-COPY Cart_product FROM '/usr/src/cart_products.csv' DELIMITER ',' CSV;
+COPY Cart_products FROM '/usr/src/cart_products.csv' DELIMITER ',' CSV;
