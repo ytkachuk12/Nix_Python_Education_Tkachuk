@@ -1,3 +1,18 @@
+CREATE TABLE if NOT EXISTS Users
+(
+    user_id serial NOT NULL PRIMARY KEY,
+    email VARCHAR(255),
+    password VARCHAR(255),
+    first_name VARCHAR(255),
+    last_name VARCHAR(255),
+    middle_name VARCHAR(255),
+    if_staff SMALLINT,
+    country VARCHAR(255),
+    city VARCHAR(255),
+    address TEXT
+);
+
+
 CREATE TABLE if NOT EXISTS Carts
 (
     cart_id INT NOT NULL PRIMARY KEY,
@@ -16,20 +31,6 @@ CREATE TABLE if NOT EXISTS Order_status
 );
 
 
-CREATE TABLE if NOT EXISTS Users
-(
-    user_id serial NOT NULL PRIMARY KEY,
-    email VARCHAR(255),
-    password VARCHAR(255),
-    first_name VARCHAR(255),
-    last_name VARCHAR(255),
-    middle_name VARCHAR(255),
-    if_staff SMALLINT,
-    country VARCHAR(255),
-    city VARCHAR(255),
-    address TEXT
-);
-
 
 CREATE TABLE if not exists Orders
 (
@@ -44,6 +45,13 @@ CREATE TABLE if not exists Orders
     FOREIGN KEY (Order_status_order_status_id) REFERENCES Order_status(order_status_id)
 );
 
+
+CREATE TABLE Categories
+(
+    category_id INTEGER PRIMARY KEY NOT NULL,
+	category_title VARCHAR(255),
+	category_description TEXT
+);
 
 
 CREATE TABLE Products
@@ -68,12 +76,4 @@ CREATE TABLE if NOT EXISTS Cart_product
     FOREIGN KEY (Products) REFERENCES Products(product_id)
 );
 
-
-
-CREATE TABLE Categories
-(
-    category_id INTEGER PRIMARY KEY NOT NULL,
-	category_title VARCHAR(255),
-	category_description TEXT
-);
 
